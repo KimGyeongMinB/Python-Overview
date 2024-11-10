@@ -37,3 +37,8 @@ class LoginSerializer(TokenObtainPairSerializer):
 
         # 'access' 키를 'token'으로 변경하여 반환
         return {"token": data['access']}
+    
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username','nickname']
